@@ -5,6 +5,10 @@ import java.util.Date;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description = "User Information POJO")
 public class User {
 
 	private int id;
@@ -13,6 +17,7 @@ public class User {
 	private String name;
 
 	@Past
+	@ApiModelProperty(notes = "Date of Birth should be in the past")
 	private Date dob;
 
 	public User(int id, String name, Date dob) {

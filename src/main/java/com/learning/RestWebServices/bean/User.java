@@ -1,10 +1,18 @@
 package com.learning.RestWebServices.bean;
-import java.sql.Date;
+
+import java.util.Date;
+
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 
 public class User {
 
 	private int id;
+
+	@Size(min = 2, message = "Name sould have atleast 2 chars")
 	private String name;
+
+	@Past
 	private Date dob;
 
 	public User(int id, String name, Date dob) {
@@ -14,10 +22,8 @@ public class User {
 		this.dob = dob;
 	}
 
-	
 	public User() {
 	}
-
 
 	public int getId() {
 		return id;
